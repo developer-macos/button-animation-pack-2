@@ -1,0 +1,162 @@
+ body {
+     font-family: 'Arial', sans-serif;
+     margin: 0;
+     padding: 0;
+     background-color: #f0f0f0;
+     color: #333;
+ }
+
+ header {
+     background-color: #2c3e50;
+     color: white;
+     text-align: center;
+     padding: 1rem;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ header img {
+     width: 150px;
+     height: auto;
+ }
+
+ h1 {
+     margin: 0.5rem 0;
+ }
+
+ main {
+     max-width: 1200px;
+     margin: 2rem auto;
+     padding: 2rem;
+     background-color: white;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .button-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 2rem;
+     margin-top: 2rem;
+ }
+
+ footer {
+     background-color: #34495e;
+     color: white;
+     text-align: center;
+     padding: 1rem;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+ }
+
+ /* Add this to your existing CSS */
+
+ .button-grid button {
+     padding: 10px 20px;
+     font-size: 16px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background-color: #3498db;
+     color: white;
+ }
+
+ /* Rotate animation */
+ .rotate {
+     transition: transform 0.3s ease;
+ }
+
+ .rotate:hover {
+     transform: rotate(360deg);
+ }
+
+ /* Expand animation */
+ .expand {
+     transition: all 0.3s ease;
+ }
+
+ .expand:hover {
+     transform: scale(1.2);
+     box-shadow: 0 0 20px rgba(52, 152, 219, 0.7);
+ }
+
+ /* Ripple animation */
+ .ripple {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .ripple:after {
+     content: "";
+     background: rgba(255, 255, 255, 0.3);
+     display: block;
+     position: absolute;
+     border-radius: 50%;
+     padding-top: 240%;
+     padding-left: 240%;
+     margin-top: -120%;
+     margin-left: -120%;
+     opacity: 0;
+     transition: all 0.8s;
+ }
+
+ .ripple:active:after {
+     padding-top: 0;
+     padding-left: 0;
+     margin-top: 0;
+     margin-left: 0;
+     opacity: 1;
+     transition: 0s;
+ }
+
+ /* Ensure these styles are also in your CSS for the previously defined animations */
+ .pulse:hover {
+     animation: pulse 1s infinite;
+ }
+
+ .shake:hover {
+     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+ }
+
+ .glow:hover {
+     box-shadow: 0 0 10px #3498db;
+ }
+
+ @keyframes pulse {
+     0% {
+         transform: scale(1);
+     }
+
+     50% {
+         transform: scale(1.1);
+     }
+
+     100% {
+         transform: scale(1);
+     }
+ }
+
+ @keyframes shake {
+
+     10%,
+     90% {
+         transform: translate3d(-1px, 0, 0);
+     }
+
+     20%,
+     80% {
+         transform: translate3d(2px, 0, 0);
+     }
+
+     30%,
+     50%,
+     70% {
+         transform: translate3d(-4px, 0, 0);
+     }
+
+     40%,
+     60% {
+         transform: translate3d(4px, 0, 0);
+     }
+ }
